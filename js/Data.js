@@ -67,7 +67,6 @@ class Data {
 
     showCountry(id) {
         let covid = this.getCOVID(this.data[this.country].alpha3Code);
-        console.log(isEmpty(covid));
         
         $('h1').text(this.data[id].name);
         $('.city-detail').html(`
