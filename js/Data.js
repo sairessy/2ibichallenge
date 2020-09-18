@@ -42,6 +42,9 @@ class Data {
         `);
 
         if(covid != undefined) {
+            
+            let mortalidade = Math.round(covid.deaths.value/covid.confirmed.value);
+                
             $('.covid').html(`<div class='covid'>
                     <h3>COVID-19</h3>
                     <ul></ul>
@@ -52,6 +55,7 @@ class Data {
                 <li>Confirmados: ${covid.confirmed.value}</li>
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
+                <li>Taxa de mortalidade: ${mortalidade}%</li>
                 <li>Data: ${covid.lastUpdate.substr(0, 10)}</li>
             `);
         } else {
