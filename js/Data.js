@@ -85,8 +85,9 @@ class Data {
                 <li>Ultima actualização:</br> ${covid.lastUpdate}</li>
             `);
         } else {
-            $('.covid').html('');
-            $('.covid ul').html('');
+            $('.covid').html(``);
+            $('.covid h3').text(' ');
+            $('.covid ul').html(``);
         }  
     }
 
