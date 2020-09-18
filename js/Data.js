@@ -54,7 +54,11 @@ class Data {
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
             `);
-        }
+        } else {
+            $('.covid').html(``);
+            $('.covid h3').text(' ');
+            $('.covid ul').html(``);
+        } 
     }
 
     showCountry(id) {
@@ -74,7 +78,7 @@ class Data {
 
         if(covid != {}) {
             $('.covid').html(`<div class='covid'>
-                     <h3></h3>
+                     <h3>COVID-19</h3>
                     <ul></ul>
                 </div>
             `);
