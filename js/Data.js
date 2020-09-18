@@ -84,11 +84,10 @@ class Data {
                 <li>Mortes: ${covid.deaths.value}</li>
                 <li>Ultima actualização:</br> ${covid.lastUpdate}</li>
             `);
-
-            if(covid == {}) {
-                $('.covid h3').text('');
-            }
-        }
+        } else {
+            $('.covid').html('');
+            $('.covid ul').html('');
+        }  
     }
 
     getCountry() {
