@@ -43,7 +43,7 @@ class Data {
 
         if(covid != undefined) {
             
-            let mortalidade = 100*(parseInt(covid.deaths.value)/parseInt(covid.confirmed.value)).toFixed(1);
+            let mortalidade = (100*(parseInt(covid.deaths.value)/parseInt(covid.confirmed.value))).toFixed(1);
                 
             $('.covid').html(`<div class='covid'>
                     <h3>COVID-19</h3>
