@@ -74,7 +74,7 @@ class Data {
 
         if(covid != {}) {
             $('.covid').html(`<div class='covid'>
-                    <h3>COVID-19</h3>
+                     <h3></h3>
                     <ul></ul>
                 </div>
             `);
