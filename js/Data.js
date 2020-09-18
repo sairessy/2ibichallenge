@@ -25,10 +25,16 @@ class Data {
 
         return d;
     }
+    
+    isEmpty(obj) { 
+       for (var x in obj) { return false; }
+       return true;
+    }
 
     show() {
         let covid = this.getCOVID(this.data[this.country].alpha3Code);
-        console.log(Object.keys(covid).length;);
+        console.log(isEmpty(covid));
+        
 
         $('h1').text(this.data[this.country].name);
         $('.city-detail').html(`
