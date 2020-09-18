@@ -49,7 +49,7 @@ class Data {
             <li>Idioma: ${this.data[this.country].languages[0].name}</li>
         `);
 
-        if(covid) {
+        if(covid != undefined) {
             $('.covid').append(`<div class='covid'>
                     <h3>COVID-19</h3>
                     <ul></ul>
