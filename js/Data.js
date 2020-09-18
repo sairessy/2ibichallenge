@@ -42,13 +42,13 @@ class Data {
         `);
 
         if(covid != undefined) {
-            $('.covid').append(`<div class='covid'>
+            $('.covid').html(`<div class='covid'>
                     <h3>COVID-19</h3>
                     <ul></ul>
                 </div>
             `);
 
-            $('.covid ul').append(`
+            $('.covid ul').html(`
                 <li>Confirmados: ${covid.confirmed.value}</li>
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
