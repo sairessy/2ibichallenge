@@ -52,6 +52,7 @@ class Data {
                 <li>Confirmados: ${covid.confirmed.value}</li>
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
+                <li>Data:</br> ${covid.lastUpdate.substr(0, 10)}</li>
             `);
         } else {
             $('.covid').html(``);
@@ -86,7 +87,7 @@ class Data {
                 <li>Confirmados: ${covid.confirmed.value}</li>
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
-                <li>Ultima actualização:</br> ${covid.lastUpdate}</li>
+                <li>Data:</br> ${covid.lastUpdate.substr(0, 10)}</li>
             `);
         } else {
             $('.covid').html(``);
