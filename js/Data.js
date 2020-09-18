@@ -94,7 +94,7 @@ class Data {
                 <li>Confirmados: ${covid.confirmed.value}</li>
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
-                <li>Mortalidade: ${mortalidade}%</li>
+                <li>Taxa de mortalidade: ${mortalidade}%</li>
                 <li>Data: ${covid.lastUpdate.substr(0, 10)}</li>
             `);
         } else {
