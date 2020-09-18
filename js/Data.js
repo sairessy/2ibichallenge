@@ -26,11 +26,6 @@ class Data {
         return d;
     }
     
-    isEmpty(obj) { 
-       for (var x in obj) { return false; }
-       return true;
-    }
-
     show() {
         let covid = this.getCOVID(this.data[this.country].alpha3Code);
 
