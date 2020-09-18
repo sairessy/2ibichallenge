@@ -33,9 +33,6 @@ class Data {
 
     show() {
         let covid = this.getCOVID(this.data[this.country].alpha3Code);
-        console.log('COVID');
-        console.log(covid);
-        
 
         $('h1').text(this.data[this.country].name);
         $('.city-detail').html(`
@@ -84,7 +81,7 @@ class Data {
             <li>Idioma: ${this.data[id].languages[0].name}</li>
         `);
 
-        if(covid != {}) {
+        if(covid != undefined) {
             $('.covid').html(`<div class='covid'>
                      <h3>COVID-19</h3>
                     <ul></ul>
