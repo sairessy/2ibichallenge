@@ -43,9 +43,7 @@ class Data {
 
         if(covid != undefined) {
             
-            let mortalidade = Math.round(parseInt(covid.deaths.value)/parseInt(covid.confirmed.value));
-            console.log(parseInt(covid.deaths.value)/parseInt(covid.confirmed.value));
-            console.log(mortalidade);
+            let mortalidade = 100*(parseInt(covid.deaths.value)/parseInt(covid.confirmed.value)).toFixed(1);
                 
             $('.covid').html(`<div class='covid'>
                     <h3>COVID-19</h3>
@@ -57,6 +55,7 @@ class Data {
                 <li>Confirmados: ${covid.confirmed.value}</li>
                 <li>Recuperados: ${covid.recovered.value}</li>
                 <li>Mortes: ${covid.deaths.value}</li>
+                <li>Taxa de mortalidade: ${mortalidade}%</li>
                 <li>Data: ${covid.lastUpdate.substr(0, 10)}</li>
             `);
         } else {
