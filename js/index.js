@@ -11,7 +11,7 @@ $(document).ready(()=> {
     
     var mymap = L.map('mapid', {
     'center': [51.505, -0.09],
-    'zoom': 4,
+    'zoom': 3,
     'layers': [
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 'attribution': 'Map data &copy; OpenStreetMap contributors'
