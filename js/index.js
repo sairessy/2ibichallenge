@@ -42,7 +42,11 @@ $(document).ready(()=> {
             
         });
     });
-
+    
+    d.data.forEach(dt=> {
+        $('datalist').append(`<option>${dt.name}</option>`);
+    });
+    
     let csvStr;
 
     // DEAL WIT XLS EXPORT
