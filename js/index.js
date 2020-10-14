@@ -49,12 +49,12 @@ $(document).ready(()=> {
     
     $('#search').change(()=> {
         d.data.forEach(dt => {
-            if(d.name == $('#search').val()) {
+            if(dt.name == $('#search').val()) {
                  let covid = this.getCOVID(dt.alpha3Code);
         
                     $('h1').text(dt.name);
                     $('.city-detail').html(`
-                        <li>Nome nativo: ${d.nativeName}</li>
+                        <li>Nome nativo: ${dt.nativeName}</li>
                         <li>Capital: ${dt.capital}</li>
                         <li>Area: ${dt.area}</li>
                         <li>População: ${dt.population}</li>
