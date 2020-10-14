@@ -48,10 +48,10 @@ $(document).ready(()=> {
     });
     
     $('#search').change(()=> {
+        console.log('changed');
         d.data.forEach(dt => {
             if(dt.name == $('#search').val()) {
-                 let covid = this.getCOVID(dt.alpha3Code);
-        
+                 
                     $('h1').text(dt.name);
                     $('.city-detail').html(`
                         <li>Nome nativo: ${dt.nativeName}</li>
@@ -63,6 +63,8 @@ $(document).ready(()=> {
                         <li>Moeda: ${dt.currencies[0].name} (${dt.currencies[0].symbol})</li>
                         <li>Idioma: ${dt.languages[0].name}</li>
                     `);
+                
+                let covid = d.getCOVID(dt.alpha3Code);
 
                     if(covid != undefined) {
 
