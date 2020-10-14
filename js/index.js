@@ -47,6 +47,49 @@ $(document).ready(()=> {
         $('datalist').append(`<option>${dt.name}</option>`);
     });
     
+    $('#search').change(()=> {
+        d.data.forEach(dt => {
+            if(d.name == $('#search').val()) {
+                 let covid = this.getCOVID(dt.alpha3Code);
+        
+                    $('h1').text(dt.name);
+                    $('.city-detail').html(`
+                        <li>Nome nativo: ${d.nativeName}</li>
+                        <li>Capital: ${dt.capital}</li>
+                        <li>Area: ${dt.area}</li>
+                        <li>População: ${dt.population}</li>
+                        <li>Região: ${dt.region}</li>
+                        <li>Bandeira: <a href='${dt.flag}' style='background-image: url(${dt.flag});' target='blank'></a></li>
+                        <li>Moeda: ${dt.currencies[0].name} (${dt.currencies[0].symbol})</li>
+                        <li>Idioma: ${dt.languages[0].name}</li>
+                    `);
+
+                    if(covid != undefined) {
+
+                        let mortalidade = (100*(parseInt(covid.deaths.value)/parseInt(covid.confirmed.value))).toFixed(1);
+
+                        $('.covid').html(`<div class='covid'>
+                                 <h3>COVID-19</h3>
+                                <ul></ul>
+                            </div>
+                        `);
+
+                        $('.covid ul').html(`
+                            <li>Confirmados: ${covid.confirmed.value}</li>
+                            <li>Recuperados: ${covid.recovered.value}</li>
+                            <li>Mortes: ${covid.deaths.value}</li>
+                            <li>Taxa de mortalidade: ${mortalidade}%</li>
+                            <li>Data: ${covid.lastUpdate.substr(0, 10)}</li>
+                        `);
+                    } else {
+                        $('.covid').html(``);
+                        $('.covid h3').text(' ');
+                        $('.covid ul').html(``);
+                    }  
+                }   
+            });
+        });
+    
     let csvStr;
 
     // DEAL WIT XLS EXPORT
